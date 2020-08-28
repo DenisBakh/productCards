@@ -36,7 +36,7 @@ function browsersync() {
 }
 
 function js() {
-	src(['node_modules/jquery/dist/jquery.min.js', 'src/components/blocks/range-slider/nouislider.min.js', 'src/components/_common/libs/*.js'])
+	src(['node_modules/jquery/dist/jquery.min.js', 'src/components/_common/libs/*.js'])
 		.pipe(rename({ dirname: '' }))
 		.pipe(dest('dist/js/'))  // обработка библиотек
 	return src(['src/pages/**/*.js']) // обработка своих Js файлов

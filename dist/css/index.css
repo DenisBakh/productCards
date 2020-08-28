@@ -177,39 +177,18 @@
 }
 
 .item-product__card {
-  margin: 0 0 10px 0;
-}
-
-.item-product__footer {
-  font-size: 13px;
-  line-height: 16px;
-  color: #ffffff;
-  font-family: "Trebuchet MS";
-  text-align: center;
-  -webkit-filter: drop-shadow(0px 1px 0.5px #000000);
-          filter: drop-shadow(0px 1px 0.5px #000000);
-}
-
-.item-product__footer_active {
-  display: none;
-}
-
-.item-product__footer_disable {
-  display: none;
-}
-
-.item-product__footer_usual-buy {
-  color: #1698d9;
-}
-
-.item-product__footer_usual-link {
-  color: inherit;
-  border-bottom: 1px dashed #1698d9;
+  margin: 0 0 15px 0;
 }
 
 .card {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   overflow: hidden;
   position: relative;
+  border-radius: 0 12px 12px 12px;
 }
 
 .card__img {
@@ -228,8 +207,15 @@
   width: 80px;
   border-radius: 50%;
   background-color: #1698d9;
-  font-family: "Trebuchet MS";
   color: #ffffff;
+}
+
+.card__info-circle.active {
+  background-color: #d91667;
+}
+
+.card__info-circle.disable {
+  background-color: #d91667;
 }
 
 .card__weight {
@@ -269,12 +255,19 @@
   line-height: 16px;
   padding: 19px 5px 5px;
   color: #666;
-  font-family: "Trebuchet MS";
+}
+
+.card__descr.active {
+  border-color: #d91667;
+}
+
+.card__descr.disable {
+  border-color: #b3b3b3;
 }
 
 .card__body {
-  padding: 5px 44px 25px 44px;
   border-radius: 0 0 12px 12px;
+  padding: 5px 44px 25px 44px;
   background: #f2f2f2;
   height: 435px;
   border-left: 4px solid #1698d9;
@@ -282,30 +275,130 @@
   border-bottom: 4px solid #1698d9;
 }
 
+.card__body.active {
+  border-color: #d91667;
+}
+
+.card__body.disable {
+  border-color: #b3b3b3;
+}
+
 .card__name {
   margin: 0 0 17px 0;
   color: #000000;
-  font-weight: bold;
-  font-family: "Trebuchet MS";
+  font-weight: 700;
 }
 
 .card__title {
   font-size: 48px;
-  line-height: 1.05em;
+  line-height: 1.05;
 }
 
 .card__title_subtitle {
   font-size: 24px;
-  line-height: 1.1em;
+  line-height: 1.1;
 }
 
 .card__advantage-list {
   font-size: 14px;
-  line-height: 16px;
+  line-height: 1.23;
   color: #666;
-  font-family: "Trebuchet MS";
 }
 
 .card__advantage-item_amount {
   font-weight: 700;
+}
+
+.product-footer {
+  font-size: 13px;
+  line-height: 1.23;
+  color: #ffffff;
+  text-align: center;
+  -webkit-filter: drop-shadow(0px 1px 0.5px #000000);
+          filter: drop-shadow(0px 1px 0.5px #000000);
+}
+
+.product-footer__item {
+  display: none;
+}
+
+.product-footer__item_usual {
+  display: block;
+}
+
+.product-footer__item_disable {
+  color: #ffff66;
+}
+
+.product-footer__buy {
+  color: #1698d9;
+}
+
+.product-footer__link {
+  color: inherit;
+  border-bottom: 1px dashed #1698d9;
+}
+
+.item-product.active .card__info-circle {
+  background-color: #d91667;
+}
+
+.item-product.active .card__angle {
+  background: -o-linear-gradient(135deg, #f2f2f2, #f2f2f2 28.3px, #d91667 0, #d91667 32px, transparent 0);
+  background: linear-gradient(-45deg, #f2f2f2, #f2f2f2 28.3px, #d91667 0, #d91667 32px, transparent 0);
+}
+
+.item-product.active .card__descr {
+  border-color: #d91667;
+}
+
+.item-product.active .card__body {
+  border-color: #d91667;
+}
+
+.item-product.active .product-footer__item_active {
+  display: block;
+}
+
+.item-product.active .product-footer__item_usual {
+  display: none;
+}
+
+.item-product.disable .card {
+  cursor: pointer;
+}
+
+.item-product.disable .card__name,
+.item-product.disable .card__descr,
+.item-product.disable .card__advantage-list {
+  color: #b3b3b3;
+}
+
+.item-product.disable .card__img {
+  opacity: 0.5;
+}
+
+.item-product.disable .card__info-circle {
+  background-color: #b3b3b3;
+}
+
+.item-product.disable .card__angle {
+  background: -o-linear-gradient(135deg, #f2f2f2, #f2f2f2 28.3px, #b3b3b3 0, #b3b3b3 32px, transparent 0);
+  background: linear-gradient(-45deg, #f2f2f2, #f2f2f2 28.3px, #b3b3b3 0, #b3b3b3 32px, transparent 0);
+}
+
+.item-product.disable .card__descr {
+  border-color: #b3b3b3;
+}
+
+.item-product.disable .card__body {
+  border-color: #b3b3b3;
+}
+
+.item-product.disable .product-footer__item_disable {
+  display: block;
+}
+
+.item-product.disable .product-footer__item_usual {
+  display: none;
 }

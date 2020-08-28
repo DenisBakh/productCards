@@ -44,7 +44,7 @@ html,
 body {
   display: block;
   min-width: 320px;
-  font-family: "Exo2", Arial, sans-serif;
+  font-family: "Trebuchet MS", Arial, sans-serif;
   width: 100%;
   line-height: 1;
   font-size: 14px;
@@ -62,7 +62,7 @@ body {
 input,
 button,
 textarea {
-  font-family: "Exo2", Arial, sans-serif;
+  font-family: "Trebuchet MS", Arial, sans-serif;
 }
 
 input::-ms-clear {

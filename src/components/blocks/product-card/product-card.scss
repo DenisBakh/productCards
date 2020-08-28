@@ -1,39 +1,21 @@
-//==================================Item-product
+//==================================product-card================================
+@import "src/components/_common/vars.scss";
+
 .item-product {
 	text-align: start;
 	min-width: 300px;
 	max-width: 320px;
 	&__card {
-		margin: 0 0 10px 0;
-	}
-	&__footer {
-		font-size: 13px;
-		line-height: 16px;
-		color: #ffffff;
-		font-family: "Trebuchet MS";
-		text-align: center;
-		filter: drop-shadow(0px 1px 0.5px #000000);
-		&_active {
-			display: none;
-		}
-		&_disable {
-			display: none;
-		}
-		&_usual {
-			&-buy {
-				color: #1698d9;
-			}
-			&-link {
-				color: inherit;
-				border-bottom: 1px dashed #1698d9;
-			}
-		}
+		margin: 0 0 15px 0;
 	}
 }
 
 .card {
+	cursor: pointer;
+	user-select: none;
 	overflow: hidden;
 	position: relative;
+	border-radius: 0 12px 12px 12px;
 	&__img {
 		position: absolute;
 		bottom: -18.4%;
@@ -48,9 +30,14 @@
 		height: 80px;
 		width: 80px;
 		border-radius: 50%;
-		background-color: #1698d9;
-		font-family: "Trebuchet MS";
+		background-color: $BorderColor_usual;
 		color: #ffffff;
+		&.active {
+			background-color: $BorderColor_active;
+		}
+		&.disable {
+			background-color: $BorderColor_active;
+		}
 	}
 	&__weight {
 		font-size: 42px;
@@ -69,8 +56,8 @@
 			-45deg,
 			rgb(242, 242, 242),
 			rgb(242, 242, 242) 28.3px,
-			#1698d9 0,
-			#1698d9 32px,
+			$BorderColor_usual 0,
+			$BorderColor_usual 32px,
 			transparent 0
 		);
 		background-repeat: no-repeat;
@@ -79,44 +66,146 @@
 		border-radius: 0 12px 0 0;
 		background: rgb(242, 242, 242);
 		flex: 1 1 auto;
-		border-right: 4px solid #1698d9;
-		border-top: 4px solid #1698d9;
+		border-right: 4px solid $BorderColor_usual;
+		border-top: 4px solid $BorderColor_usual;
 		font-size: 16px;
 		line-height: 16px;
 		padding: 19px 5px 5px;
 		color: #666;
-		font-family: "Trebuchet MS";
+		&.active {
+			border-color: $BorderColor_active;
+		}
+		&.disable {
+			border-color: $BorderColor_disable;
+		}
 	}
 	&__body {
-		padding: 5px 44px 25px 44px;
 		border-radius: 0 0 12px 12px;
+		padding: 5px 44px 25px 44px;
 		background: rgb(242, 242, 242);
 		height: 435px;
-		border-left: 4px solid #1698d9;
-		border-right: 4px solid #1698d9;
-		border-bottom: 4px solid #1698d9;
+		border-left: 4px solid $BorderColor_usual;
+		border-right: 4px solid $BorderColor_usual;
+		border-bottom: 4px solid $BorderColor_usual;
+		&.active {
+			border-color: $BorderColor_active;
+		}
+		&.disable {
+			border-color: $BorderColor_disable;
+		}
 	}
 	&__name {
 		margin: 0 0 17px 0;
 		color: #000000;
-		font-weight: bold;
-		font-family: "Trebuchet MS";
+		font-weight: 700;
 	}
 	&__title {
 		font-size: 48px;
-		line-height: 1.05em;
+		line-height: 1.05;
 		&_subtitle {
 			font-size: 24px;
-			line-height: 1.1em;
+			line-height: 1.1;
 		}
 	}
 	&__advantage-list {
 		font-size: 14px;
-		line-height: 16px;
+		line-height: 1.23;
 		color: #666;
-		font-family: "Trebuchet MS";
 	}
 	&__advantage-item_amount {
 		font-weight: 700;
+	}
+}
+
+.product-footer {
+	font-size: 13px;
+	line-height: 1.23;
+	color: #ffffff;
+	text-align: center;
+	filter: drop-shadow(0px 1px 0.5px #000000);
+	&__item {
+		display: none;
+		&_usual {
+			display: block;
+		}
+		&_disable {
+			color: #ffff66;
+		}
+	}
+	&__buy {
+		color: $BorderColor_usual;
+	}
+	&__link {
+		color: inherit;
+		border-bottom: 1px dashed $BorderColor_usual;
+	}
+}
+
+//Модификация активной карточки
+.item-product.active {
+	.card__info-circle {
+		background-color: $BorderColor_active;
+	}
+	.card__angle {
+		background: linear-gradient(
+			-45deg,
+			rgb(242, 242, 242),
+			rgb(242, 242, 242) 28.3px,
+			$BorderColor_active 0,
+			$BorderColor_active 32px,
+			transparent 0
+		);
+	}
+	.card__descr {
+		border-color: $BorderColor_active;
+	}
+	.card__body {
+		border-color: $BorderColor_active;
+	}
+	.product-footer__item_active {
+		display: block;
+	}
+	.product-footer__item_usual {
+		display: none;
+	}
+}
+
+//Модификация отключенной карточки
+.item-product.disable {
+	.card {
+		cursor: pointer;
+	}
+	.card__name,
+	.card__descr,
+	.card__advantage-list {
+		color: $BorderColor_disable;
+	}
+	.card__img {
+		opacity: 0.5;
+	}
+	.card__info-circle {
+		background-color: $BorderColor_disable;
+	}
+	.card__angle {
+		background: linear-gradient(
+			-45deg,
+			rgb(242, 242, 242),
+			rgb(242, 242, 242) 28.3px,
+			$BorderColor_disable 0,
+			$BorderColor_disable 32px,
+			transparent 0
+		);
+	}
+	.card__descr {
+		border-color: $BorderColor_disable;
+	}
+	.card__body {
+		border-color: $BorderColor_disable;
+	}
+	.product-footer__item_disable {
+		display: block;
+	}
+	.product-footer__item_usual {
+		display: none;
 	}
 }

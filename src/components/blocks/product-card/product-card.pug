@@ -1,16 +1,16 @@
-mixin product-card(imgSrc='img/cat.png', descr='Сказочное заморское яство', title='Нямушка', subtitle='с рыбой', advantageList)
-	.item-product
+mixin product-card(imgSrc='img/cat.png', descr='Сказочное заморское яство', title='Нямушка', subtitle='с рыбой', weight=2, weightMeasure='кг', advantageList=[{amount: 10, name: 'порций'}, {amount: '', name: 'мышь в подарок'}], cardType='usual', footerText={usual: {text: 'Чего сидишь? Порадуй котэ,', linkText: 'купи'}, active: {text: 'Головы щучьи с чесночком да свежайшая сёмгушка'}, disable: {text: 'Печалька, с рыбой закончился'} })
+	.item-product(class= cardType=='usual' ? '' : cardType)
 		.item-product__card
 			.card
-				.card__img
-					img(src=imgSrc, alt="card-image")
-				.card__info-circle
-					.card__weight 2
-					.card__weight_measure кг
 				.card__header
 					.card__angle
 					.card__descr=descr
 				.card__body
+					.card__img
+						img(src=imgSrc, alt="card-image")
+					.card__info-circle
+						.card__weight=weight
+						.card__weight_measure=weightMeasure
 					.card__name
 						h2.card__title=title
 						h3.card__title.card__title_subtitle=subtitle
@@ -19,13 +19,14 @@ mixin product-card(imgSrc='img/cat.png', descr='Сказочное заморс�
 							each item in advantageList
 								li.card__advantage-item
 									if item.amount !== ''
-										span.card__advantage-item_amount=`${item.amount}`
+										span.card__advantage-item_amount=item.amount
 										|&nbsp;
-									=`${item.name}`
+									=item.name
 		.item-product__footer
-			.item-product__footer_usual 
-				|Чего сидишь? Порадуй котэ,&nbsp;
-				span.item-product__footer_usual-buy
-					a.item-product__footer_usual-link(href='#') купи
-			.item-product__footer_active Головы щучьи с чесночком да свежайшая сёмгушка
-			.item-product__footer_disable Печалька, с рыбой закончился
+			.product-footer
+				.product-footer__item.product-footer__item_usual=footerText.usual.text
+					|&nbsp;
+					span.product-footer__buy
+						a.product-footer__link(href='#')=footerText.usual.linkText
+				.product-footer__item.product-footer__item_active=footerText.active.text
+				.product-footer__item.product-footer__item_disable=footerText.disable.text

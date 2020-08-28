@@ -1,2 +1,2 @@
 //=================index.js
-@@include('../../components/blocks/range-slider/range-slider.js')
+@@include('../../components/blocks/product-card/product-card.js')

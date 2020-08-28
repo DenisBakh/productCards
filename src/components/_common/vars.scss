@@ -1,7 +1,7 @@
 // Font
-$mainFont: "Exo2", Arial, sans-serif;
+$Font_main: "Trebuchet MS", Arial, sans-serif;
+$Font_second: "Exo2", Arial, sans-serif;
 
-//Переменные>==========================================================================================================================================
 // Size
 $minwidth: 320px;
 
@@ -14,3 +14,8 @@ $smDesktopWidth: 980px;
 $tableWidth: 768px;
 $phoneWidth: 480px;
 $smPhoneWidth: 320px;
+
+//color
+$BorderColor_usual: #1698d9;
+$BorderColor_active: #d91667;
+$BorderColor_disable: #b3b3b3;
