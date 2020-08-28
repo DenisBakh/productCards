@@ -1,0 +1,98 @@
+include ../../components/blocks/header/header.pug
+include ../../components/blocks/footer/footer.pug
+include ../../components/blocks/product-card/product-card.pug
+
+
+
+doctype html
+html(lang="ru")
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
+		link(rel="icon" type="image/x-icon" href="img/favicon.ico")
+		link(rel="stylesheet", href="css/common.css")
+		link(rel="stylesheet", href="css/index.css")
+		title='Главная'
+	body
+		.wrapper
+			+header()
+			main.main
+				.main__bg.ibg
+					img(src="img/Pattern.png", alt="")
+				.container
+					.main__content
+						.main-content
+							h1.main-content__title Ты сегодня покормил кота?
+							.main-content__body
+								.main-content__row
+									.main-content__column
+										.main-content__item
+											-
+												const productCard = {
+													imgSrc: 'img/cat.png',
+													descr: 'Сказочное заморское яство', 
+													title: 'Нямушка', 
+													subtitle: 'с рыбой',
+													advantageList: [
+														{amount: 10, name: 'порций'},
+														{amount: 2, name: 'мыши в подарок'}]
+												}
+											+product-card(productCard.imgSrc, productCard.descr, productCard.title, productCard.subtitle, productCard.advantageList)
+									.main-content__column
+										.main-content__item
+											.item-product
+												.item-product__card
+													.card
+														.card__img
+															img(src="img/cat.png", alt="")
+														.card__info-circle
+															.card__weight 2
+															.card__weight_measure кг
+														.card__header
+															.card__angle
+															.card__descr Сказочное заморское яство
+														.card__body
+															.card__name
+																h2.card__title Нямушка
+																h3.card__title.card__title_subtitle с рыбой
+															ul.card__advantage-list
+																li.card__advantage-item 
+																	span.card__advantage-item_amount 40
+																	|&nbsp;порций
+																li.card__advantage-item
+																	span.card__advantage-item_amount 2
+																	|&nbsp;мыши в подарок
+												.item-product__footer
+													.item-product__footer_usual 
+														|Чего сидишь? Порадуй котэ,&nbsp;
+														span.item-product__footer_usual-buy
+															a.item-product__footer_usual-link(href='#') купи
+													.item-product__footer_active Головы щучьи с чесночком да свежайшая сёмгушка
+													.item-product__footer_disable Печалька, с рыбой закончился
+									.main-content__column
+										.main-content__item
+											.item-product
+												img(src="img/cat.png", alt="")
+												.item-product__header
+													.item-product__angle
+													.item-product__descr Сказочное заморское яство
+												.item-product__body
+													h2.item-product__title Нямушка
+													h3.item-product__subtitle с фуа-гра
+													ul.item-product__advantage-list
+														li.item-product__advantage-item 10 порций
+														li.item-product__advantage-item мышь в подарок
+
+			+footer()
+		
+		script(src='js/jquery.min.js')
+		// jquery
+		script(src='js/wNumb.min.js')
+		// плагин для задания формата цифр
+		script(src='js/nouislider.min.js')
+		// плагин для слайдера диапазаона
+		script(src='js/common.js')
+		script(src='js/index.js')
+
+
+

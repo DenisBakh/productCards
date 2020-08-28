@@ -1,0 +1,168 @@
+//===============================================Index.scss
+
+.indication {
+	height: 100vh;
+	&__content {
+		max-width: 500px;
+		min-width: 280px;
+		margin: 0 auto;
+	}
+}
+.main {
+}
+
+.main {
+	flex: 1 1 auto;
+	//height: 100%;
+	position: relative;
+	&__bg {
+		z-index: -5;
+		height: 100%;
+		position: absolute;
+		width: 100%;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		&:after {
+			content: "";
+			position: absolute;
+			display: block;
+			height: 100%;
+			width: 100%;
+			background: linear-gradient(
+				180deg,
+				rgba(0, 0, 0, 0.5) 0%,
+				rgba(0, 0, 0, 5e-5) 49.88%,
+				rgba(0, 0, 0, 0.5) 100%
+			);
+		}
+	}
+}
+/*
+.main {
+	background-image: url("/img/pattern.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+*/
+.main-content {
+	//z-index: 2;
+	font-family: Exo2.0;
+	font-size: 36px;
+	line-height: 42px;
+	text-align: center;
+
+	color: #ffffff;
+	&__row {
+		display: flex;
+		margin: 0 -40px;
+	}
+	&__column {
+		flex: 1 1 33.3%;
+		padding: 0 40px;
+	}
+}
+/*
+.item-product {
+	text-align: start;
+	min-width: 300px;
+	max-width: 320px;
+	overflow: hidden;
+	position: relative;
+	&__img {
+		position: absolute;
+		bottom: -18.4%;
+		left: -7%;
+	}
+	&__info-circle {
+		padding: 20px 0 0 0;
+		text-align: center;
+		position: absolute;
+		right: 5%;
+		bottom: 3%;
+		height: 80px;
+		width: 80px;
+		border-radius: 50%;
+		background-color: #1698d9;
+		font-family: "Trebuchet MS";
+		color: #ffffff;
+	}
+	&__weight {
+		font-size: 42px;
+		line-height: 20px;
+		&_measure {
+			font-size: 21px;
+		}
+	}
+	&__header {
+		height: 44px;
+		display: flex;
+	}
+	&__angle {
+		flex: 0 0 44px;
+		background: linear-gradient(
+			-45deg,
+			rgb(242, 242, 242),
+			rgb(242, 242, 242) 28.3px,
+			#1698d9 0,
+			#1698d9 32px,
+			transparent 0
+		);
+		background-repeat: no-repeat;
+	}
+	&__descr {
+		border-radius: 0 12px 0 0;
+		background: rgb(242, 242, 242);
+		flex: 1 1 auto;
+		border-right: 4px solid #1698d9;
+		border-top: 4px solid #1698d9;
+		font-size: 16px;
+		line-height: 16px;
+		padding: 19px 5px 5px;
+		color: #666;
+		font-family: "Trebuchet MS";
+	}
+	&__body {
+		padding: 5px 44px 25px 44px;
+		border-radius: 0 0 12px 12px;
+		background: rgb(242, 242, 242);
+		height: 435px;
+		border-left: 4px solid #1698d9;
+		border-right: 4px solid #1698d9;
+		border-bottom: 4px solid #1698d9;
+	}
+	&__name {
+		margin: 0 0 17px 0;
+		color: #000000;
+		font-weight: bold;
+		font-family: "Trebuchet MS";
+	}
+	&__title {
+		font-size: 48px;
+		line-height: 1.05em;
+		&_subtitle {
+			font-size: 24px;
+			line-height: 1.1em;
+		}
+	}
+	&__advantage-list {
+		font-size: 14px;
+		line-height: 16px;
+		color: #666;
+		font-family: "Trebuchet MS";
+	}
+	&__advantage-item_amount {
+		font-weight: 700;
+	}
+	&__footer {
+		font-size: 13px;
+		line-height: 16px;
+		color: #ffffff;
+		font-family: "Trebuchet MS";
+		text-align: center;
+		filter: drop-shadow(0px 1px 0.5px #000000);
+	}
+}
+*/
+@import "src/components/blocks/product-card/product-card.scss";
