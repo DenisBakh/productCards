@@ -1,10 +1,12 @@
-mixin product-card(imgSrc='img/cat.png', descr='Сказочное заморское яство', title='Нямушка', subtitle='с рыбой', weight=2, weightMeasure='кг', advantageList=[{amount: 10, name: 'порций'}, {amount: '', name: 'мышь в подарок'}], cardType='usual', footerText={usual: {text: 'Чего сидишь? Порадуй котэ,', linkText: 'купи'}, active: {text: 'Головы щучьи с чесночком да свежайшая сёмгушка'}, disable: {text: 'Печалька, с рыбой закончился'} })
+mixin product-card(imgSrc='img/cat.png', descr='Сказочное заморское яство', comebackDescr='Котэ не одобряет?', title='Нямушка', subtitle='с рыбой', weight=2, weightMeasure='кг', advantageList=[{amount: 10, name: 'порций'}, {amount: '', name: 'мышь в подарок'}], cardType='usual', footerText={usual: {text: 'Чего сидишь? Порадуй котэ,', linkText: 'купи'}, active: {text: 'Головы щучьи с чесночком да свежайшая сёмгушка'}, disable: {text: 'Печалька, с рыбой закончился'} })
 	.item-product(class= cardType=='usual' ? '' : cardType)
 		.item-product__card
 			.card
 				.card__header
 					.card__angle
-					.card__descr=descr
+					.card__rectangle
+						.card__descr=descr
+						.card__comeback=comebackDescr
 				.card__body
 					.card__img
 						img(src=imgSrc, alt="card-image")

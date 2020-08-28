@@ -198,7 +198,7 @@
 }
 
 .card__info-circle {
-  padding: 20px 0 0 0;
+  padding: 22px 0 0 0;
   text-align: center;
   position: absolute;
   right: 5%;
@@ -210,17 +210,9 @@
   color: #ffffff;
 }
 
-.card__info-circle.active {
-  background-color: #d91667;
-}
-
-.card__info-circle.disable {
-  background-color: #d91667;
-}
-
 .card__weight {
   font-size: 42px;
-  line-height: 20px;
+  line-height: 18px;
 }
 
 .card__weight_measure {
@@ -243,7 +235,7 @@
   background-repeat: no-repeat;
 }
 
-.card__descr {
+.card__rectangle {
   border-radius: 0 12px 0 0;
   background: #f2f2f2;
   -webkit-box-flex: 1;
@@ -251,18 +243,13 @@
           flex: 1 1 auto;
   border-right: 4px solid #1698d9;
   border-top: 4px solid #1698d9;
+  padding: 19px 5px 5px;
+}
+
+.card__descr {
   font-size: 16px;
   line-height: 16px;
-  padding: 19px 5px 5px;
   color: #666;
-}
-
-.card__descr.active {
-  border-color: #d91667;
-}
-
-.card__descr.disable {
-  border-color: #b3b3b3;
 }
 
 .card__body {
@@ -273,14 +260,6 @@
   border-left: 4px solid #1698d9;
   border-right: 4px solid #1698d9;
   border-bottom: 4px solid #1698d9;
-}
-
-.card__body.active {
-  border-color: #d91667;
-}
-
-.card__body.disable {
-  border-color: #b3b3b3;
 }
 
 .card__name {
@@ -301,7 +280,7 @@
 
 .card__advantage-list {
   font-size: 14px;
-  line-height: 1.23;
+  line-height: 1.16;
   color: #666;
 }
 
@@ -309,13 +288,26 @@
   font-weight: 700;
 }
 
+.card:hover .card__body,
+.card:hover .card__rectangle {
+  border-color: #2ea8e6;
+}
+
+.card:hover .card__angle {
+  background: -o-linear-gradient(135deg, #f2f2f2, #f2f2f2 28.3px, #2ea8e6 0, #2ea8e6 32px, transparent 0);
+  background: linear-gradient(-45deg, #f2f2f2, #f2f2f2 28.3px, #2ea8e6 0, #2ea8e6 32px, transparent 0);
+}
+
+.card:hover .card__info-circle {
+  background-color: #2ea8e6;
+}
+
 .product-footer {
   font-size: 13px;
   line-height: 1.23;
   color: #ffffff;
   text-align: center;
-  -webkit-filter: drop-shadow(0px 1px 0.5px #000000);
-          filter: drop-shadow(0px 1px 0.5px #000000);
+  text-shadow: 0 1px 0 #000000;
 }
 
 .product-footer__item {
@@ -348,7 +340,7 @@
   background: linear-gradient(-45deg, #f2f2f2, #f2f2f2 28.3px, #d91667 0, #d91667 32px, transparent 0);
 }
 
-.item-product.active .card__descr {
+.item-product.active .card__rectangle {
   border-color: #d91667;
 }
 
@@ -364,14 +356,45 @@
   display: none;
 }
 
+.item-product.active .card__descr {
+  display: none;
+}
+
+.item-product.active .card__comeback {
+  display: block;
+}
+
+.item-product.active:hover .card__body,
+.item-product.active:hover .card__rectangle {
+  border-color: #e52e7a;
+}
+
+.item-product.active:hover .card__angle {
+  background: -o-linear-gradient(135deg, #f2f2f2, #f2f2f2 28.3px, #e52e7a 0, #e52e7a 32px, transparent 0);
+  background: linear-gradient(-45deg, #f2f2f2, #f2f2f2 28.3px, #e52e7a 0, #e52e7a 32px, transparent 0);
+}
+
+.item-product.active:hover .card__info-circle {
+  background-color: #e52e7a;
+}
+
+.item-product.active:hover .card__descr {
+  display: block;
+}
+
+.item-product.active:hover .card__comeback {
+  display: none;
+}
+
 .item-product.disable .card {
-  cursor: pointer;
+  cursor: default;
 }
 
 .item-product.disable .card__name,
 .item-product.disable .card__descr,
 .item-product.disable .card__advantage-list {
   color: #b3b3b3;
+  opacity: 0.5;
 }
 
 .item-product.disable .card__img {
@@ -387,7 +410,7 @@
   background: linear-gradient(-45deg, #f2f2f2, #f2f2f2 28.3px, #b3b3b3 0, #b3b3b3 32px, transparent 0);
 }
 
-.item-product.disable .card__descr {
+.item-product.disable .card__rectangle {
   border-color: #b3b3b3;
 }
 

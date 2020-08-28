@@ -31,6 +31,7 @@ html(lang="ru")
 												productCard = {
 													imgSrc: 'img/cat.png', // product client's photo
 													descr: 'Сказочное заморское яство', // product header - description
+													comebackDescr: 'Котэ не одобряет?', // text, when you unhover selected card
 													title: 'Нямушка', // product name
 													subtitle: 'с фуа-гра', // product subname
 													weight: '0,5',
@@ -42,17 +43,18 @@ html(lang="ru")
 													footerType: 'usual',// 'usual' for non-active and enabled, 'active' for active and enabled, 'disabled' for disabled
 													footerText: {
 														usual: {text: 'Чего сидишь? Порадуй котэ,', linkText: 'купи'}, 
-														active: {text: 'Головы щучьи с чесноком да свежайшая сёмгушка'}, 
-														disable: {text: 'Печалька, с рыбой закончился'} 
+														active: {text: 'Печень утки разварная с артишоками.'}, 
+														disable: {text: 'Печалька, с рыбой закончился.'} 
 														} // footer texts for all conditions
 												}
-											+product-card(productCard.imgSrc, productCard.descr, productCard.title, productCard.subtitle, productCard.weight, productCard.weightMeasure, productCard.advantageList, productCard.footerType, productCard.footerText)
+											+product-card(productCard.imgSrc, productCard.descr, productCard.comebackDescr, productCard.title, productCard.subtitle, productCard.weight, productCard.weightMeasure, productCard.advantageList, productCard.footerType, productCard.footerText)
 									.main-content__column
 										.main-content__item
 											-
 												productCard = {
 													imgSrc: 'img/cat.png', // product client's photo
 													descr: 'Сказочное заморское яство', // product header - description
+													comebackDescr: 'Котэ не одобряет?', // text, when you unhover selected card
 													title: 'Нямушка', // product name
 													subtitle: 'с рыбой', // product subname
 													weight: 2,
@@ -64,17 +66,18 @@ html(lang="ru")
 													footerType: 'active',// 'usual' for non-active and enabled, 'active' for active and enabled, 'disabled' for disabled
 													footerText: {
 														usual: {text: 'Чего сидишь? Порадуй котэ,', linkText: 'купи'}, 
-														active: {text: 'Головы щучьи с чесноком да свежайшая сёмгушка'}, 
-														disable: {text: 'Печалька, с рыбой закончился'} 
+														active: {text: 'Головы щучьи с чесноком да свежайшая сёмгушка.'}, 
+														disable: {text: 'Печалька, с рыбой закончился.'} 
 														} // footer texts for all conditions
 												}
-											+product-card(productCard.imgSrc, productCard.descr, productCard.title, productCard.subtitle, productCard.weight, productCard.weightMeasure, productCard.advantageList, productCard.footerType, productCard.footerText)
+											+product-card(productCard.imgSrc, productCard.descr, productCard.comebackDescr, productCard.title, productCard.subtitle, productCard.weight, productCard.weightMeasure, productCard.advantageList, productCard.footerType, productCard.footerText)
 									.main-content__column
 										.main-content__item
 											-
 												productCard = {
 													imgSrc: 'img/cat.png', // product client's photo
 													descr: 'Сказочное заморское яство', // product header - description
+													comebackDescr: 'Котэ не одобряет?', // text, when you unhover selected card
 													title: 'Нямушка', // product name
 													subtitle: 'с курой', // product subname
 													weight: 5,
@@ -87,11 +90,11 @@ html(lang="ru")
 													footerType: 'disable',// 'usual' for non-active and enabled, 'active' for active and enabled, 'disabled' for disabled
 													footerText: {
 														usual: {text: 'Чего сидишь? Порадуй котэ,', linkText: 'купи'}, 
-														active: {text: 'Головы щучьи с чесноком да свежайшая сёмгушка'}, 
-														disable: {text: 'Печалька, с рыбой закончился'} 
+														active: {text: 'Филе из цыплят с трюфелями в бульоне.'}, 
+														disable: {text: 'Печалька, с рыбой закончился.'} 
 														} // footer texts for all conditions
 												}
-											+product-card(productCard.imgSrc, productCard.descr, productCard.title, productCard.subtitle, productCard.weight, productCard.weightMeasure, productCard.advantageList, productCard.footerType, productCard.footerText)
+											+product-card(productCard.imgSrc, productCard.descr, productCard.comebackDescr, productCard.title, productCard.subtitle, productCard.weight, productCard.weightMeasure, productCard.advantageList, productCard.footerType, productCard.footerText)
 
 			+footer()
 		
