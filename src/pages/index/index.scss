@@ -53,6 +53,9 @@
 		//padding: 0 40px;
 		margin: 25px 40px;
 	}
+	&__item {
+		height: 100%;
+	}
 }
 
 @import "src/components/blocks/product-card/product-card.scss";
