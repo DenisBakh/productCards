@@ -30,7 +30,7 @@ html,
 body {
 	display: block;
 	min-width: $minwidth;
-	font-family: $Font_main;
+	font-family: $font_main;
 	width: 100%;
 	line-height: 1;
 	font-size: $mainFontSize;
@@ -60,7 +60,7 @@ body {
 input,
 button,
 textarea {
-	font-family: $Font_main;
+	font-family: $font_main;
 }
 input::-ms-clear {
 	display: none;

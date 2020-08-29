@@ -1,5 +1,5 @@
-mixin product-card(imgSrc='img/cat.png', descr='Сказочное заморское яство', comebackDescr='Котэ не одобряет?', title='Нямушка', subtitle='с рыбой', weight=2, weightMeasure='кг', advantageList=[{amount: 10, name: 'порций'}, {amount: '', name: 'мышь в подарок'}], cardType='usual', footerText={usual: {text: 'Чего сидишь? Порадуй котэ,', linkText: 'купи'}, active: {text: 'Головы щучьи с чесночком да свежайшая сёмгушка'}, disable: {text: 'Печалька, с рыбой закончился'} })
-	.item-product(class= cardType=='usual' ? '' : cardType)
+mixin product-card(imgSrc='img/cat.png', descr='Сказочное заморское яство', comebackDescr='Котэ не одобряет?', title='Нямушка', subtitle='с рыбой', weight=2, weightMeasure='кг', advantageList=[{amount: 10, name: 'порций'}, {amount: '', name: 'мышь в подарок'}], cardType='default', footerText={default: {text: 'Чего сидишь? Порадуй котэ,', linkText: 'купи'}, selected: {text: 'Головы щучьи с чесночком да свежайшая сёмгушка'}, disabled: {text: 'Печалька, с рыбой закончился'} })
+	.item-product(class= cardType=='default' ? '' : cardType)
 		.item-product__card
 			.card
 				.card__header
@@ -26,9 +26,9 @@ mixin product-card(imgSrc='img/cat.png', descr='Сказочное заморс�
 									=item.name
 		.item-product__footer
 			.product-footer
-				.product-footer__item.product-footer__item_usual=footerText.usual.text
+				.product-footer__item.product-footer__item_default=footerText.default.text
 					|&nbsp;
 					span.product-footer__buy
-						a.product-footer__link(href='#')=footerText.usual.linkText
-				.product-footer__item.product-footer__item_active=footerText.active.text
-				.product-footer__item.product-footer__item_disable=footerText.disable.text
+						a.product-footer__link(href='#')=footerText.default.linkText
+				.product-footer__item.product-footer__item_selected=footerText.selected.text
+				.product-footer__item.product-footer__item_disabled=footerText.disabled.text
