@@ -1,8 +1,8 @@
 <div align="center">
-  <img width="159" height="60" src="https://github.com/DenisBakh/productCards/blob/master/productCard.png">
-  <h1>Hotel-Toxin</h1>
+  <img width="800" height="auto" src="https://github.com/DenisBakh/productCards/blob/master/productCard.png">
+  <h1>productCard</h1>
   <p>
-    Hotel-Toxin - веб страница, разработанная с использованием Gulp 4 по методологии БЭМ с компонентной архитектурой исходных файлов.
+    productCard - веб страница, разработанная с использованием Gulp 4 по методологии БЭМ с компонентной архитектурой исходных файлов.
   </p>
   <p>Автор разработки приложения: Бахматов Денис</p>
 </div>
