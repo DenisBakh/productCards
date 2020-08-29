@@ -77,12 +77,14 @@ function fonts() {
 
 function images() {
 	return src(['src/**/*.{gif,png,jpg,svg,webp}', '!src/components/_common/fonts/*'])
+		/*
 		.pipe(newer('dist/img/'))
 		.pipe(webp({
 			quality: 70
 		}))
 		.pipe(rename({ dirname: '' }))
 		.pipe(dest('dist/img/'))
+		*/
 		.pipe(src(['src/**/*.{gif,png,jpg,svg,webp,ico}', '!src/components/_common/fonts/*']))
 		.pipe(newer('dist/img/'))
 		.pipe(imagemin({

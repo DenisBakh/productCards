@@ -2,6 +2,7 @@
 
 //=========================FOOTER====================================
 
+//Convert html img to css background
 function ibg() {
 	$.each($('.ibg'), function (index, val) {
 		if ($(this).find('img').length > 0) {
