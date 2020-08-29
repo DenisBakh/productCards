@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="159" height="60" src="https://github.com/DenisBakh/Hotel-Toxin/blob/master/src/project/common.blocks/ui_kit/logotype/logo_UI/Logo.png">
+  <img width="159" height="60" src="https://github.com/DenisBakh/productCard/productCard.png">
   <h1>Hotel-Toxin</h1>
   <p>
     Hotel-Toxin - веб страница, разработанная с использованием Gulp 4 по методологии БЭМ с компонентной архитектурой исходных файлов.
