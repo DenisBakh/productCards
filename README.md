@@ -28,7 +28,7 @@ npm install
 gulp
 
 # Build project:
-build
+gulp build
 ```
 
 ## Project Structure:
